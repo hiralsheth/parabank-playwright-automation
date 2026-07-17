@@ -28,8 +28,11 @@ export default defineConfig({
     /* Collect trace when retrying the failed test */
     trace: 'on-first-retry',
 
-    /* Retain screenshot for every failed test */
-    screenshot: 'only-on-failure',
+    /* Screenshots: every test locally, failures only on CI */
+    screenshot: process.env.CI ? 'only-on-failure' : 'on',
+
+    /* Video: record every test locally, off on CI to save space */
+    video: process.env.CI ? 'off' : 'on',
 
     /* Longer navigation and action timeouts on CI (demo site can be slow from US runners) */
     navigationTimeout: process.env.CI ? 60_000 : 30_000,
