@@ -31,16 +31,16 @@ export class RegisterPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.firstNameInput = page.locator('input#customer\.firstName');
-    this.lastNameInput = page.locator('input#customer\.lastName');
-    this.addressInput = page.locator('input#customer\.address\.street');
-    this.cityInput = page.locator('input#customer\.address\.city');
-    this.stateInput = page.locator('input#customer\.address\.state');
-    this.zipCodeInput = page.locator('input#customer\.address\.zipCode');
-    this.phoneNumberInput = page.locator('input#customer\.phoneNumber');
-    this.ssnInput = page.locator('input#customer\.ssn');
-    this.usernameInput = page.locator('input#customer\.username');
-    this.passwordInput = page.locator('input#customer\.password');
+    this.firstNameInput = page.locator('[id="customer.firstName"]');
+    this.lastNameInput = page.locator('[id="customer.lastName"]');
+    this.addressInput = page.locator('[id="customer.address.street"]');
+    this.cityInput = page.locator('[id="customer.address.city"]');
+    this.stateInput = page.locator('[id="customer.address.state"]');
+    this.zipCodeInput = page.locator('[id="customer.address.zipCode"]');
+    this.phoneNumberInput = page.locator('[id="customer.phoneNumber"]');
+    this.ssnInput = page.locator('[id="customer.ssn"]');
+    this.usernameInput = page.locator('[id="customer.username"]');
+    this.passwordInput = page.locator('[id="customer.password"]');
     this.confirmPasswordInput = page.locator('input#repeatedPassword');
     this.registerButton = page.getByRole('button', { name: 'Register' });
   }
