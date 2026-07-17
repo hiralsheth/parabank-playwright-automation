@@ -1,0 +1,30 @@
+{
+  "name": "parabank-playwright-automation",
+  "version": "1.0.0",
+  "description": "Enterprise Playwright TypeScript automation framework for ParaBank banking application",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:headed": "playwright test --headed --project=chromium",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:validation": "playwright test --grep @validation",
+    "test:auth": "playwright test tests/auth/",
+    "test:debug": "playwright test --debug",
+    "test:ci": "CI=true playwright test",
+    "report": "playwright show-report",
+    "lint": "tsc --noEmit",
+    "lint:local": "./node_modules/.bin/tsc --noEmit"
+  },
+  "keywords": ["playwright", "typescript", "automation", "banking", "parabank", "e2e", "pom"],
+  "author": "Hiral Sheth",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "typescript": "*"
+  }
+}
