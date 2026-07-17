@@ -43,14 +43,12 @@ jobs:
       - name: Run Playwright tests
         run: |
           BROWSER="${{ github.event.inputs.browser }}"
-          if [ "$BROWSER" = "chromium" ]; then
-            npm run test:chromium
-          elif [ "$BROWSER" = "firefox" ]; then
+          if [ "$BROWSER" = "firefox" ]; then
             npm run test:firefox
           elif [ "$BROWSER" = "webkit" ]; then
             npm run test:webkit
           else
-            npm run test:ci
+            npm run test:chromium
           fi
         env:
           CI: true
