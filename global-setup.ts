@@ -77,8 +77,7 @@ async function globalSetup(): Promise<void> {
     await browser.close();
   }
 
-  console.log('[Setup] ─── Global Setup Complete ────────────────────────────
-');
+  console.log('[Setup] ─── Global Setup Complete ────────────────────────────\n');
 }
 
 export default globalSetup;
