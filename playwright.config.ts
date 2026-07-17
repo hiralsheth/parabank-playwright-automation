@@ -17,7 +17,10 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  /* Increase expect timeout on CI where the demo site can be slow */
+  expect: {
+    timeout: process.env.CI ? 15_000 : 5_000,
+  },
   use: {
     /* Base URL — override with BASE_URL env var when targeting other environments */
     baseURL: process.env.BASE_URL ?? 'https://parabank.parasoft.com',
@@ -27,6 +30,10 @@ export default defineConfig({
 
     /* Retain screenshot for every failed test */
     screenshot: 'only-on-failure',
+
+    /* Longer navigation and action timeouts on CI (demo site can be slow from US runners) */
+    navigationTimeout: process.env.CI ? 60_000 : 30_000,
+    actionTimeout: process.env.CI ? 30_000 : 10_000,
   },
 
   /* Configure projects for major browsers */
